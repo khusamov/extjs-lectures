@@ -1,0 +1,17 @@
+{
+  "name": "sample-workspace",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc:w": "tsc -w",
+    "nodemon": "nodemon -w ./server.js server.js",
+    "sencha:w": "cd sampleapp && sencha app watch --port 20000",
+    "start": "node ./node_modules/concurrently/src/main.js -n \"client,server\" -c \"magenta,blue,yellow\" -k \"npm run sencha:w\" \"npm run nodemon\""
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.4.0",
+    "cors": "^2.8.4",
+    "express": "4.14.0",
+    "lodash": "^4.17.4"
+  }
+}
