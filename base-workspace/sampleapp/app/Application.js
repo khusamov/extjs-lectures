@@ -1,20 +1,16 @@
 
 Ext.define('SampleApp.Application', {
 
-   extend: 'Ext.app.Application',
-	name: 'SampleApp',
+	extend: 'Ext.app.Application',
 	requires: [
-		'SampleApp.view.main.Main', 
-		'SampleApp.view.login.Login'
+		'SampleApp.core.view.login.Login',
+		'SampleApp.view.main.Main'
 	],
 
 	launch() {
-		Ext.create('SampleApp.view.login.Login', {
-			listeners: {
-				loginclose: 'onLoginClose',
-				scope: this
-			}
-		});
+		const loginWin = Ext.create('SampleApp.core.view.login.Login');
+		loginWin.on('loginclose', 'onLoginClose', this);
+
 	},
 
 	onLoginClose() {

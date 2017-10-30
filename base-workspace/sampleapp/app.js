@@ -1,7 +1,7 @@
 
 Ext.application({
-
-    name: 'SampleApp',
-    extend: 'SampleApp.Application'
-	
+	name: 'SampleApp',
+	extend: 'SampleApp.Application'
 });
+
+

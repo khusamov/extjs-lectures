@@ -27,6 +27,18 @@ app.post('/personnel', (req, res) => {
 	});
 });
 
+app.post('/login', (req, res) => {
+	if (req.body.login == 'ivan' && req.body.password == '1') {
+		res.json({
+			success: true
+		});
+	} else {
+		res.json({
+			success: false
+		});
+	}
+});
+
 const port = 3000;
 
 app.listen(port, () => {
