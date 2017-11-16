@@ -1,36 +1,25 @@
 
 Ext.define('SampleApp.view.main.Main', {
 
-	extend: 'Ext.grid.Panel',
-	requires: ['SampleApp.view.main.MainModel'],
+	extend: 'Ext.tab.Panel',
+	requires: [
+		'SampleApp.view.main.MainModel',
+		'SampleApp.view.personnel.Personnel',
+		'SampleApp.view.main.MainController'
+	],
 	viewModel: 'main',
+	controller: 'main',
 
-	title: 'Personnel',
+	title: 'Управление компанией',
 
-	bind: '{personnelStore}',
-
-	columns: [{ 
-		text: 'Name',  
-		dataIndex: 'name', 
-		flex: 2,
-		editor: 'textfield'
-	}, { 
-		text: 'Email', 
-		dataIndex: 'email',
-		flex: 1,
-		editor: 'textfield'
-	}, { 
-		text: 'Phone', 
-		dataIndex: 'phone', 
-		flex: 1,
-		editor: 'textfield'
-	}],
-
-	selModel: 'rowmodel',
-
-	plugins: {
-		 ptype: 'rowediting',
-		 clicksToEdit: 1
-	}
-
+	items: [{
+		title: 'Персонал компании',
+		xtype: 'personnel',
+		listeners: {
+			itemclick: 'onPersonnelItemClick'
+		}
+	}, {
+		title: 'Отдел кадров'
+	}]
+	
 });

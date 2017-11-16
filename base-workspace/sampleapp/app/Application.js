@@ -8,8 +8,9 @@ Ext.define('SampleApp.Application', {
 	],
 
 	launch() {
-		const loginWin = Ext.create('SampleApp.core.view.login.Login');
-		loginWin.on('loginclose', 'onLoginClose', this);
+		this.setMainView('SampleApp.view.main.Main');
+		// const loginWin = Ext.create('SampleApp.core.view.login.Login');
+		// loginWin.on('loginclose', 'onLoginClose', this);
 
 	},
 

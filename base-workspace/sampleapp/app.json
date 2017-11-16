@@ -5,6 +5,7 @@
     "framework": "ext",
     "toolkit": "classic",
     "theme": "theme-triton",
+    "locale": "ru",
 
     "indexHtmlPath": "index.html",
 
@@ -23,6 +24,7 @@
     ],
 
     "requires": [
+        "ext-locale",
         "font-awesome",
         "sampleapp-core"
     ],
